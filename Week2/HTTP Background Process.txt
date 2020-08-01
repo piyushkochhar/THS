@@ -1,0 +1,17 @@
+HTTP Background Process
+
+1) Running a background python server on port 80
+
+python -m http.server 80 &
+
+And it returns a PID of “23024”
+
+2) Capturing logs in log.txt file
+
+//If you are using http.server, you have to flush the output using PYTHONUNBUFFERED=x
+
+PYTHONUNBUFFERED=x python3 -m http.server 80 > log.txt 2>&1
+
+3)Terminate a background process
+
+kill 23024

@@ -1,0 +1,41 @@
+Binary System and chmod
+
+chmod is used to set permissions on a file.
+Eg: chmod 777 file.txt
+The above command would give read, write and execute permissions to the user owner, group and other users.
+
+The file permissions are represented as: -rwxrwxrwx
+Where 1’st bit is the sticky bit and tells what kind of file it is.
+
+So, 1st 3 bits after sticky bit represent user owner permissions 
+the next 3 bits represent group permissions and the
+last 3 bits represent permissions for all other users.
+
+Each bit in the permission is a binary bit and to turn on a permission bit we use 1 and to turn off we use 0.
+
+So, if we want a file to be only read, write and executed by the user owner and nobody else i.e. we want our file permissions to look like
+
+-rwx------ 
+
+Then, the command would be chmod 700 file.txt.
+Here, we are converting a set of three bits into its equivalent decimal number.
+
+In the above example, we wanted all 3 permissions for the user owner and nothing for anyone else, therefore it’s binary is:
+
+User Owner		Group			Others
+-----------------	------------------	----------------
+r	w	x	r	w	x	r	w	x
+1	1	1	0	0	0	0	0	0
+---------------		-----------------	-----------------
+Converting set of 3 bits into decimal => (700)10 , and hence the command is chmod 700 file.txt
+
+Similarly, if want the file permissions to have full access by user owner and only read and execute permissions for group and other users, then 
+
+User Owner		Group			Others
+-----------------	------------------	----------------
+r	w	x	r	w	x	r	w	x
+1	1	1	1	0	1	1	0	1
+---------------		-----------------	-----------------
+= > (755)10
+
+Therefore, the chmod command is: chmod 755 file.txt
