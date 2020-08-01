@@ -1,0 +1,20 @@
+1) Set up a cron job which creates a new text in the path ~/ file every
+20 seconds.
+Note:
+a) The Text File Name should be the system TIME while
+executing.
+b)The Text File Content should be the system DATE.
+
+Solution:
+
+script.sh
+—————
+echo $(date +%Y-%m-%d) > $(date +\%H-\%M-\%S)
+
+
+Cronjob
+—————
+* * * * * bash script.sh
+* * * * * sleep 20; bash script.sh
+* * * * * sleep 40; bash script.sh
+
