@@ -12,6 +12,8 @@ And it returns a PID of “23024”
 
 PYTHONUNBUFFERED=x python3 -m http.server 80 > log.txt 2>&1
 
+//try using sudo nohup
+
 3)Terminate a background process
 
 kill 23024
