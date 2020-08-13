@@ -19,18 +19,24 @@ Sample Input 2 into output.txt: CO/DE 2019
 
 let ascii = {};
 
+//Create an ASCII obejct
+//Output: Object { char: decimal_value}
 function makeAscii(){
   for(let i = 0; i < 128; i++){
     ascii[String.fromCharCode(i)] = i
   }
 }
 
-makeAscii()
-
+//Converts string into it's decimal equivalent
+//Input: Binary string
+//Output: Array of Decimal values for each charcater
 function getDecimal(str){
   return str.split('').map((val) => ascii[val]);
 }
 
+//Converts decimal into binary
+//Input: Decimal number
+//Output: 8-bit binary string
 function binary(num){
   let result = '';
 
@@ -48,21 +54,28 @@ function binary(num){
 
 }
 
-function addPadding(num){
-  let length = num.length;
+//Pads 0's to binary string 
+//Input: Binary string
+//Output: 8-bit binary string
+function addPadding(str){
+  let length = str.length;
   
   for(let i = length; i < 8; i++){
-    num = 0 + num;
+    str= 0 + str;
   }
 
-  return num;
+  return str;
 
 }
 
+//Get Binaries for all decimals values
+//Input: String
+//Output: Array of all binaries
 function getBinaries(str){
   return getDecimal(str).map((val) => {
     return binary(val)
     })
 }
 
+makeAscii()
 getBinaries('CO/DE 2019')
