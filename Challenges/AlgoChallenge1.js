@@ -1,21 +1,19 @@
 /*
-WriteanAlgorithmtoextractinputEnglishLanguagesentencecharactersandconvertthecharacterstothe8-bitBINARYpatterns.ImporttheASCIIObjectattached into your source code.
+Write an Algorithm to extract input English Language sentence characters andconvert the characters to the 8-bit BINARY patterns.
+Import the ASCII Object attached into your source code.
 
-Note :(a)Binary Conversion Should be done using Recursion only.   (No Built-In libraries allowed)(b)Take Command Line Input for Sentence (readline-sync module)(c)OutPut should be ​8BIT​ Binaries only.(d) Input can have special characters like /;:  etc.
-
-WriteanAlgorithmtoextractinputEnglishLanguagesentencecharactersandconvertthecharacterstothe8-bitBINARYpatterns.ImporttheASCIIObjectattached into your source code.
 Note :
-(a)Binary Conversion Should be done using Recursion only.   (No Built-In libraries allowed)
+(a)Binary Conversion Should be done using Recursion only.   
+(No Built-In libraries allowed)
 (b)Take Command Line Input for Sentence (readline-sync module)
 (c)OutPut should be ​8BIT​ Binaries only.
-(d) Input can have special characters like /;:  etc.,
+(d) Input can have special characters like /;:  etc.
+
 Sample Input 1:AB CD
 Sample Output 1 into output.txt:
 [ '01000001', '01000010', '00100000', '01000011', '01000100' ]
 Sample Input 2 into output.txt: CO/DE 2019
 [  '01000011', '01001111',  '00101111', '01000100',  '01000101', '00100000',  '00110010', '00110000',  '00110001', '00111001']
-
-(e) Add error detection using checksum
 
 */
 
