@@ -15,6 +15,8 @@ Sample Output 1 into output.txt:
 Sample Input 2 into output.txt: CO/DE 2019
 [  '01000011', '01001111',  '00101111', '01000100',  '01000101', '00100000',  '00110010', '00110000',  '00110001', '00111001']
 
+(e) Add error detection using checksum
+
 */
 
 let ascii = {};
