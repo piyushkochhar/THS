@@ -1,3 +1,6 @@
+//Extend AlgoChallenge1 to include error detection using checksum
+//Read more about error detection algos on greeksforgeeks
+
 let ascii = {};
 
 //Create an ASCII obejct
