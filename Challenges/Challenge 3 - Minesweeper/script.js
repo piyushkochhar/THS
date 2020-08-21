@@ -3,13 +3,15 @@ const app = document.getElementById('app');
 app.innerHTML = `<h3><img src="https://static.wixstatic.com/media/fef1e4_141cd29fc9624b23a4d2ad922dbcb149~mv2.png/v1/fill/w_220,h_220,al_c,q_85,usm_0.66_1.00_0.01/trophy.webp" class="trophy-head"/> : <span id="trophies"></span></h3>
                 <table></table>
                 <button class="reset" onClick="reset()">Reset</button>
-                <audio src="https://felgo.com/web-assets/pop.wav"></audio>`;
+                <audio id="pop" src="https://felgo.com/web-assets/pop.wav"></audio>
+                <audio id="game-over" src="game-over-sound-effect.mp3"></audio>`;
 
 const table = app.querySelector('table');
 const h3 = app.querySelector('h3');
 const trophies = app.querySelector('#trophies');
 const btn = app.querySelector('.reset');
-const audio = app.querySelector('audio');
+const audio = app.querySelector('#pop');
+const audioEnd = app.querySelector('#game-over');
 
 let state = {
   data: [],
@@ -64,6 +66,7 @@ function render() {
     } else if (val.isBomb) {
       value = `<td><img src="https://media.giphy.com/media/l378c6HXBGxfyF92E/giphy.gif" class="bomb-img"/></td>`;
       stylesOnBomb();
+      audioEnd.play();
     } else {
       value = `<td onClick='findMultiples(${val.value})'>${val.value}</td>`;
     }
