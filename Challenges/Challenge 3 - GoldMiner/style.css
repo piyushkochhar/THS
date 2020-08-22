@@ -10,6 +10,10 @@ header {
   text-align: center;
 }
 
+header {
+  margin-bottom: -20px;
+}
+
 table {
   margin: 0 auto;
   border-collapse: collapse;
@@ -24,13 +28,14 @@ td {
   padding: 0.7em;
 }
 
-.trophy-head {
-  width: 5%;
-  vertical-align: bottom;
+.gold-head {
+  width: 10%;
+  position: relative;
+  top: 20px;
 }
 
-.trophy-img {
-  height: 10%;
+.gold-img {
+  height: 5%;
 }
 
 .bomb-img {

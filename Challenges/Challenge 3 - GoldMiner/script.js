@@ -1,6 +1,6 @@
 const app = document.getElementById('app');
 
-app.innerHTML = `<h3><img src="https://static.wixstatic.com/media/fef1e4_141cd29fc9624b23a4d2ad922dbcb149~mv2.png/v1/fill/w_220,h_220,al_c,q_85,usm_0.66_1.00_0.01/trophy.webp" class="trophy-head"/> : <span id="trophies"></span></h3>
+app.innerHTML = `<h3><img src="https://pngimage.net/wp-content/uploads/2019/05/facebook-logo-gold-png-.png" class="gold-head"/> : <span id="trophies"></span></h3>
                 <table></table>
                 <button class="reset" onClick="reset()">Reset</button>
                 <audio id="pop" src="https://felgo.com/web-assets/pop.wav"></audio>
@@ -8,6 +8,7 @@ app.innerHTML = `<h3><img src="https://static.wixstatic.com/media/fef1e4_141cd29
 
 const table = app.querySelector('table');
 const h3 = app.querySelector('h3');
+const h3Content = h3.innerHTML;
 const trophies = app.querySelector('#trophies');
 const btn = app.querySelector('.reset');
 const audio = app.querySelector('#pop');
@@ -17,6 +18,7 @@ let state = {
   data: [],
   trophies: null,
   bombs: [],
+  gameOver: null,
 };
 
 function initState() {
@@ -30,20 +32,18 @@ function initState() {
   }
   state.trophies = 0;
   state.bombs = Array.from({ length: 3 }).map((val) => getRandom());
+  state.gameOver = false;
 }
 
 function getRandom() {
-  return Math.floor(Math.floor(Math.random() * (100 - 1) + 1));
+  return Math.floor(Math.floor(Math.random() * (100 - 2) + 2));
 }
 
 function findMultiples(num) {
   audio.play();
   state.data.forEach((data) => {
-    // if (findBomb(num) && num === data.value) {
-    //   data.isBomb = true;
-    // }
     if (data.value % num === 0 && !findBomb(data.value)) {
-      state.trophies++;
+      ++state.trophies;
       data.value = '**';
     } else if (data.value % num === 0 && findBomb(data.value)) {
       data.isBomb = true;
@@ -62,10 +62,10 @@ function render() {
   let value = null;
   state.data.forEach((val, i) => {
     if (val.value === '**') {
-      value = `<td><img src="https://static.wixstatic.com/media/fef1e4_141cd29fc9624b23a4d2ad922dbcb149~mv2.png/v1/fill/w_220,h_220,al_c,q_85,usm_0.66_1.00_0.01/trophy.webp" class="trophy-img"/></td>`;
+      value = `<td><img src="https://cdn3.iconfinder.com/data/icons/finance-152/64/29-512.png" class="gold-img"/></td>`;
     } else if (val.isBomb) {
       value = `<td><img src="https://media.giphy.com/media/l378c6HXBGxfyF92E/giphy.gif" class="bomb-img"/></td>`;
-      stylesOnBomb();
+      state.gameOver ? state.gameOver : (state.gameOver = stylesOnBomb());
       audioEnd.play();
     } else {
       value = `<td onClick='findMultiples(${val.value})'>${val.value}</td>`;
@@ -89,13 +89,19 @@ function render() {
 function stylesOnBomb() {
   btn.innerText = 'Start Over';
   btn.style.backgroundColor = '#cf1b1b';
-  h3.innerText = `You Lost! Try Again `;
+  var node = document.createElement('P');
+  var textnode = document.createTextNode('You Lost! Try Again.'); // Create a text node
+  node.appendChild(textnode);
+  h3.append(node);
+  return true;
 }
 
 function resetStyles() {
   btn.innerText = 'Reset';
   btn.style.backgroundColor = '#00d4ff';
-  h3.innerHTML = `<img src="https://static.wixstatic.com/media/fef1e4_141cd29fc9624b23a4d2ad922dbcb149~mv2.png/v1/fill/w_220,h_220,al_c,q_85,usm_0.66_1.00_0.01/trophy.webp" class="trophy-head"/> : <span id="trophies">${state.trophies}</span>`;
+  if (h3.querySelector('p')) {
+    h3.removeChild(h3.querySelector('p'));
+  }
 }
 
 function reset() {
@@ -108,7 +114,7 @@ function init() {
   initState();
   // O(n)
   render();
-  console.log(state.bombs);
+  // console.log(state.bombs);
 }
 
 init();
