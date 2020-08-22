@@ -28,6 +28,7 @@ navigator.getBattery().then(function (battery) {
 
   battery.onlevelchange = function () {
     progress.value = battery.level * 100;
+    batteryLevel.innerText = progress.value + '%';
     setColor(progress.value);
   };
 });
