@@ -29,17 +29,17 @@ td {
 }
 
 .gold-head {
-  width: 10%;
+  width: 50px;
   position: relative;
   top: 20px;
 }
 
 .gold-img {
-  height: 5%;
+  height: 20px;
 }
 
 .bomb-img {
-  height: 8%;
+  height: 30px;
   text-align: center;
 }
 

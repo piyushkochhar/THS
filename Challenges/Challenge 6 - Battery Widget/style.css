@@ -1,20 +1,28 @@
 * {
   box-sizing: border-box;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 }
 
 h1 {
   text-align: center;
+  margin-top: 100px;
+  font-size: 4em;
 }
 
 progress {
-  width: 60%;
+  width: 60vw;
   height: 200px;
-  margin: 50px auto;
+  margin: 150px auto;
   display: block;
-  border: 10px solid rgb(133, 39, 196);
+  border: 10px solid #0f4c75;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
-  border-radius: 10px;
-  /* border-top-left-radius: 10px; */
+  border-radius: 100px;
 }
 
 progress::-webkit-progress-bar {
@@ -24,8 +32,7 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  border-radius: 10px;
-  /* border-top-left-radius: 10px; */
+  border-radius: 100px;
 }
 
 .fair::-webkit-progress-value {
@@ -40,20 +47,9 @@ progress::-webkit-progress-value {
   background-color: #b1161c;
 }
 
-/* progress::-webkit-progress-value {
-  border-radius: 10px;
-  background-color: green;
-} */
-
-progress::after {
-  content: '';
+#battery-level {
   position: absolute;
-  left: 78%;
-  top: 190px;
-  height: 40px;
-  width: 20px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  background-color: black;
-  z-index: -1;
+  top: 390px;
+  left: 38%;
+  font-size: 4em;
 }
