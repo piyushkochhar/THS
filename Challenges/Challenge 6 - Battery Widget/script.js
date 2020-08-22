@@ -14,24 +14,18 @@ navigator.getBattery().then(function (battery) {
   setColor(progress.value);
   let text = '';
 
-  batteryLevel.innerText = progress.value + '%';
-  //   if (battery.charging) {
-  //     text = `Battery is Charging`;
-  //   } else {
-  //     text = `Battery would discharge in ${parseInt(
-  //       battery.dischargingTime / 60
-  //     )} minutes`;
-  //   }
-  //   batteryInfo.innerText = text;
-
-  // ... and any subsequent updates.
+  batteryLevel.innerText = roundToTwo(progress.value) + '%';
 
   battery.onlevelchange = function () {
     progress.value = battery.level * 100;
-    batteryLevel.innerText = progress.value + '%';
+    batteryLevel.innerText = roundToTwo(progress.value) + '%';
     setColor(progress.value);
   };
 });
+
+function roundToTwo(num) {
+  return +(Math.round(num + 'e+2') + 'e-2');
+}
 
 function setColor(batteryLevel) {
   console.log(batteryLevel);
