@@ -1,0 +1,71 @@
+html,
+body {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Leckerli One', cursive;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+form,
+#form-inputs {
+  margin-top: 50px;
+}
+
+form {
+  margin: 0 auto;
+}
+
+#form-buttons {
+  margin-top: 20px;
+}
+
+#form-buttons button {
+  margin-left: 20px;
+  margin-top: 10px;
+  border: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  border: 5px solid #ffc93c;
+  font-family: 'Leckerli One', cursive;
+}
+
+button:hover {
+  animation: 0.5s growBorder;
+  animation-fill-mode: forwards;
+}
+
+@keyframes growBorder {
+  from {
+    border: 5px solid #ffc93c;
+  }
+  to {
+    border: 20px solid #ffc93c;
+  }
+}
+
+#form-buttons button:focus,
+.form-input input:focus {
+  outline: none;
+}
+
+.visibility {
+  display: none;
+}
+
+.form-input input {
+  display: inline-block;
+  font-size: 1.4em;
+  padding: 10px 0;
+  max-width: 200px;
+  width: 50%;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: none;
+  border-top: 20px solid rgba(7, 104, 159, 0.5);
+  border-bottom: 20px solid rgba(7, 104, 159, 0.5);
+}

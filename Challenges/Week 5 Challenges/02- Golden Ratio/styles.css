@@ -1,0 +1,24 @@
+#one {
+  width: 900px;
+  height: 555px;
+}
+#two {
+  width: calc(555px / 1.62);
+  height: 555px;
+}
+#three {
+  width: calc(555px / 1.62);
+  height: calc(calc(555px / 1.62) / 1.62);
+}
+#four {
+  width: calc(calc(calc(555px / 1.62) / 1.62) / 1.62);
+  height: calc(calc(555px / 1.62) / 1.62);
+}
+#five {
+  width: calc(calc(calc(555px / 1.62) / 1.62) / 1.62);
+  height: calc(calc(calc(calc(555px / 1.62) / 1.62) / 1.62) / 1.62);
+}
+#six {
+  width: calc(calc(calc(calc(calc(555px / 1.62) / 1.62) / 1.62) / 1.62) / 1.62);
+  height: calc(calc(calc(calc(555px / 1.62) / 1.62) / 1.62) / 1.62);
+}

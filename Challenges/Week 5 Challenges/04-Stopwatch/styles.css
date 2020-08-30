@@ -1,0 +1,57 @@
+body {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Nova Mono', monospace;
+}
+
+#stopwatch {
+  padding-top: 1em;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 8px double red;
+  border-radius: 50%;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.time {
+  font-size: 2em;
+  margin-top: 27%;
+  margin-bottom: 20px;
+}
+
+button {
+  font-family: 'Nova Mono', monospace;
+  width: 70px;
+  height: 50px;
+  border-radius: 70px;
+  border: none;
+  background: #2f69ff;
+  color: white;
+}
+button:hover {
+  animation: 1s pulse;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0px 0px 0px #2f69ff;
+  }
+
+  to {
+    box-shadow: 0px 0px 10px #2f69ff;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+.visibility {
+  display: none;
+}
