@@ -6,7 +6,7 @@ function isPrime(num) {
       return false;
     }
   }
-  return true;
+  return true && num !== 1;
 }
 
 //O(log n * log n)
