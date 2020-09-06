@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+table,
+tr,
+td {
+  text-align: center;
+  border: 1px solid black;
+  font-size: 50px;
+  border-collapse: collapse;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  width: 150px;
+  height: 150px;
+}
+
+input {
+  width: 90%;
+  height: 100%;
+  border: none;
+  font-size: 50px;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
