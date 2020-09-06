@@ -4,7 +4,7 @@ var readlineSync = require('readline-sync');
 function xorEncryptDecrypt(str, key) {
   let result = '';
   let length = str.length;
-  let keyASCII = key.charCodeAt(0);
+  let keyASCII = key.toUpperCase().charCodeAt(0);
 
   for (let i = 0; i < length; i++) {
     result += String.fromCharCode(str.charCodeAt(i) ^ keyASCII);
