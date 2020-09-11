@@ -1,5 +1,5 @@
 const app = document.getElementById('app');
-var secretkey = config.SECRET_KEY;
+const secretkey = config.SECRET_KEY;
 
 app.innerHTML = `      
 <div class="search-bar">
