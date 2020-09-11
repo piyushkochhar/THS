@@ -29,7 +29,7 @@ const day = date.toString().slice(0, 15);
 
 const getCityWeather = (cityName) => {
   const key = secretkey;
-  const URL = `http://api.openweathermap.org/data/2.5/weather?q=`;
+  const URL = `https://api.openweathermap.org/data/2.5/weather?q=`;
   const apiCall = `${URL}${cityName}&appid=${key}`;
   return axios.get(apiCall);
 };
@@ -45,7 +45,7 @@ function getWeather() {
       weather.country = res.data.sys.country;
       weather.city = res.data.name;
       weather.type = res.data.weather[0].main;
-      weather.icon = `http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`;
+      weather.icon = `https://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`;
     })
     .then(() => {
       card.classList.remove('visibility');
