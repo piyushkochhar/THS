@@ -6,7 +6,7 @@ app.innerHTML = `
     <form onSubmit="return false">
         <input type="text" placeholder="Enter your city" id="search" />
         <button type="submit" id="submit" onClick="getWeather()">
-        <img src="https://www.pngfind.com/pngs/m/432-4323226_search-icon-transparent-search-button-png-png-download.png"/>
+        <img src="https://vectorified.com/images/google-search-icon-1.png"/>
         </button>
     </form>
 </div>
