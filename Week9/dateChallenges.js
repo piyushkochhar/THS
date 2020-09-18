@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-// Get ip address, find timezone on that ip and create date obj
+// Get ip address, find timezone for that ip and return date obj
 async function getClientDate() {
   try {
     console.clear();
@@ -90,18 +90,22 @@ async function getMonthWeekends(date) {
 
 // O(total days in a year)
 async function getYearWeekends(year) {
-  const currDate = await getClientDate();
-  currDate.setFullYear(year);
+  try {
+    const currDate = await getClientDate();
+    currDate.setFullYear(year);
 
-  let totalWeekends = 0;
+    let totalWeekends = 0;
 
-  for (let i = 1; i <= 12; i++) {
-    currDate.setMonth(i);
-    totalWeekends += await getMonthWeekends(currDate);
+    for (let i = 1; i <= 12; i++) {
+      currDate.setMonth(i);
+      totalWeekends += await getMonthWeekends(currDate);
+    }
+
+    console.log(`Total Weekend Days in ${year} are : ${totalWeekends}`);
+    console.log('-----------------------------------------');
+  } catch (err) {
+    console.log(err);
   }
-
-  console.log(`Total Weekend Days in ${year} are : ${totalWeekends}`);
-  console.log('-----------------------------------------');
 }
 
 // getTomorrow();
