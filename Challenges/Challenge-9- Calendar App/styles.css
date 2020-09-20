@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  text-align: center;
+}
+
+#monthAndYear {
+  margin-top: 3rem;
+}
+
+#calendar-table {
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+#calendar-table th,
+#calendar-table td {
+  padding: 0.8rem;
+}
+
+#calendar-table #current-date {
+  border: 1px solid rgb(0, 102, 255);
+  /* border-radius: 50%; */
+}
+
+.holiday {
+  color: red;
+}
