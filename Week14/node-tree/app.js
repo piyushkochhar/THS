@@ -59,4 +59,6 @@ const printTree = (tree, indent = 0) => {
 // Give input as cmd line argument
 const dirName = process.argv[2];
 const treeObj = generateTree(dirName);
+// Uncomment to get JSON
+// console.log(JSON.stringify(treeObj),null, " ")
 printTree(treeObj)
