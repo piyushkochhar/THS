@@ -18,13 +18,45 @@ const generateTree = (dir) => {
 
     // If current name is directory recurse
     if(status.isDirectory()){
+        obj.type = "folder"
         obj.children = fs.readdirSync(dir).map(function(child) {
             return generateTree(dir + '/' + child);
         });
+    } else{
+        obj.type = "file"
     }
 
     return obj;
 }
 
+const printTree = (tree, indent = 0) => {
+
+    // If tree not object return.
+    if(typeof tree === 'string'){
+        console.log(tree+"\n");
+        return;
+    }
+
+    // Get total indents
+    let indents = Array(indent).fill(" ").map((v) => {
+        return " |";
+    }).join("") + "-";
+
+    // check type and recurse
+    if(tree.type === "folder"){
+        console.log(indents + tree.name)
+        if(tree.children){
+            tree.children.forEach(child => {
+                printTree(child,indent+1)
+            });
+        }
+    } 
+    else { 
+        console.log(indents + tree.name)
+    }
+}
+
+// Give input as cmd line argument
 const dirName = process.argv[2];
-console.log(JSON.stringify(generateTree(dirName), null, "  "));
+const treeObj = generateTree(dirName);
+printTree(treeObj)
